@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Debisi NG | Coming Soon" />
+    <meta
+      name="keywords"
+      content="Debisi NG, Business Directory, Ibadan, Nigeria"
+    />
+    <meta name="author" content="isalesNG Emporium" />
+    <meta name="developer" content="Adept Technologies - 08051943051" />
+    <title>Debisi NG | Coming Soon</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="shortcut icon"
+      href="/images/debisi_logo.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- TOP ANNOUNCEMENT HEADER -->
+    <div class="bg-black text-white p-2 text-center text-sm font-medium">
+      <p>
+        An extra ordinary business directory experience is coming to Ibadan 😃.
+      </p>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="headerBox">
+      <div class="headerContainer">
+        <div class="brand">
+          <h4 class="brandName">
+            <a href="/">Debisi</a>
+          </h4>
+        </div>
+        <div class="navButtons">
+          <button
+            type="button"
+            onclick="showUpcoming('Login')"
+            class="text-gray-700 font-medium hover:text-purple-600 transition-colors"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            onclick="showUpcoming('Get Started')"
+            class="sellButton"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="w-full h-auto bg-white flex flex-col items-center text-center py-[40px] px-[20px] mt-[2px]"
+    >
+      <h1
+        class="max-w-[50rem] px-3 md:px-0 text-3xl sm:text-4xl md:text-6xl font-bold md:leading-[1.3em] gradient-headline"
+      >
+        The #1 Business Directory in Ibadan City!
+      </h1>
+      <h3
+        class="font-semibold text-center px-4 text-gray-400 mt-[20px] text-lg"
+      >
+        Grow Your Business Today. <br />
+        Get Listed, Get Seen
+      </h3>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h4>Search</h4>
+          <p>Businesses across Ibadan.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h4>Videos</h4>
+          <p>Watch buisness stories.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <h4>Notice</h4>
+          <p>Business Updates on time</p>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <h2>Ready to explore Ibadan like never before?</h2>
+        <button onclick="openGame()" class="sellButton p-8">
+          See What's Coming &nbsp; <i class="fas fa-arrow-right"></i>
+        </button>
+      </section>
+    </section>
+
+    <!-- MODALS -->
+    <div id="upcomingModal" class="modal-overlay">
+      <div class="modal-card">
+        <button class="close-modal" onclick="closeUpcoming()">&times;</button>
+        <div class="card-content">
+          <h3 id="upcomingTitle" class="text-xl font-bold mb-4">Coming Soon</h3>
+          <p id="upcomingText" class="text-gray-600 leading-relaxed">
+            This area is opening soon. Stay tuned for updates.
+          </p>
+          <div class="mt-6 text-right">
+            <button class="sellButton" onclick="closeUpcoming()">Okay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="gameModal" class="modal-overlay">
+      <div class="modal-card">
+        <button class="close-modal" onclick="closeGame()">&times;</button>
+
+        <div id="carouselPart">
+          <div class="card-image-container">
+            <img id="cardImage" src="" alt="App Preview" />
+            <div class="card-gradient-overlay">
+              <h3 id="cardTitle"></h3>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <p id="cardDesc"></p>
+
+            <div class="button-group">
+              <button class="btn-choice btn-pass" onclick="handleChoice()">
+                <i class="fas fa-times"></i> Pass
+              </button>
+              <button class="btn-choice btn-smash" onclick="handleChoice()">
+                <i class="fas fa-heart"></i> Smash
+              </button>
+            </div>
+
+            <div class="dots-container">
+              <div class="dot" id="dot0"></div>
+              <div class="dot" id="dot1"></div>
+              <div class="dot" id="dot2"></div>
+              <div class="dot" id="dot3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="emailPart" class="email-step">
+          <div class="email-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Don't miss the vibe! 🚀</h3>
+          <p>
+            Connect with us on Instagram to see more hidden gems in Ibadan and
+            get early access.
+          </p>
+          <div class="mt-6 text-center">
+            <a
+              href="https://instagram.com/debisi.ng"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sellButton px-8 py-3"
+              >Hook me up on Instagram @debisi.ng</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footerBox">
+      <div class="text-center text-sm">
+        <p><b>Debisi &#8482; 2026</b></p>
+        <p class="p-2"><i>A product of isalesNG Emporium</i></p>
+      </div>
+    </footer>
+
+    <script src="/index.js"></script>
+  </body>
+</html>
