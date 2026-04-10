@@ -27,9 +27,7 @@
   <body>
     <!-- TOP ANNOUNCEMENT HEADER -->
     <div class="bg-black text-white p-2 text-center text-sm font-medium">
-      <p>
-        An extra ordinary business directory experience is coming to Ibadan 😃.
-      </p>
+      <p>Business discovery is coming to Ibadan 🎉</p>
     </div>
 
     <!-- MAIN NAVIGATION HEADER -->
@@ -43,17 +41,10 @@
         <div class="navButtons">
           <button
             type="button"
-            onclick="showUpcoming('Login')"
-            class="text-gray-700 font-medium hover:text-purple-600 transition-colors"
-          >
-            Login
-          </button>
-          <button
-            type="button"
             onclick="showUpcoming('Get Started')"
             class="sellButton"
           >
-            Get Started
+            Coming Soon!
           </button>
         </div>
       </div>
@@ -80,22 +71,28 @@
           <div class="feature-icon">
             <i class="fas fa-search"></i>
           </div>
-          <h4>Search</h4>
-          <p>Businesses across Ibadan.</p>
+          <div class="feature-content">
+            <h4>Search</h4>
+            <p>Businesses across Ibadan.</p>
+          </div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-video"></i>
           </div>
-          <h4>Videos</h4>
-          <p>Watch buisness stories.</p>
+          <div class="feature-content">
+            <h4>Watch</h4>
+            <p>Buisness Showroom Videos.</p>
+          </div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-bell"></i>
           </div>
-          <h4>Notice</h4>
-          <p>Business Updates on time</p>
+          <div class="feature-content">
+            <h4>Notice</h4>
+            <p>Business Timely Updates.</p>
+          </div>
         </div>
       </div>
 
@@ -139,10 +136,16 @@
             <p id="cardDesc"></p>
 
             <div class="button-group">
-              <button class="btn-choice btn-pass" onclick="handleChoice()">
+              <button
+                class="btn-choice btn-pass"
+                onclick="handleChoice('pass')"
+              >
                 <i class="fas fa-times"></i> Pass
               </button>
-              <button class="btn-choice btn-smash" onclick="handleChoice()">
+              <button
+                class="btn-choice btn-smash"
+                onclick="handleChoice('smash')"
+              >
                 <i class="fas fa-heart"></i> Smash
               </button>
             </div>
@@ -162,18 +165,30 @@
           </div>
           <h3>Don't miss the vibe! 🚀</h3>
           <p>
-            Connect with us on Instagram to see more hidden gems in Ibadan and
-            get early access.
-          </p>
-          <div class="mt-6 text-center">
+            Drop your email to get early access, then connect with us on
             <a
               href="https://instagram.com/debisi.ng"
               target="_blank"
               rel="noopener noreferrer"
-              class="sellButton px-8 py-3"
-              >Hook me up on Instagram @debisi.ng</a
+              class="ig-handle-link"
+              >@debisi.ng</a
             >
-          </div>
+          </p>
+          <form id="leadForm" onsubmit="submitLead(event)">
+            <input
+              type="email"
+              id="leadEmail"
+              class="lead-email-input"
+              placeholder="your.email@example.com"
+            />
+            <button
+              type="submit"
+              id="leadSubmitBtn"
+              class="sellButton lead-submit-btn"
+            >
+              Hook me up with @debisi.ng
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -186,6 +201,9 @@
       </div>
     </footer>
 
+    <!-- Firebase SDK (v9 compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
     <script src="/index.js"></script>
   </body>
 </html>
